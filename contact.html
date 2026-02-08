@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nature | Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #A100FF; --black: #000000; --white: #FFFFFF; }
+        body { margin: 0; background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; }
+        nav { display: flex; justify-content: space-between; padding: 25px 5%; align-items: center; border-bottom: 1px solid #222; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; text-transform: uppercase; }
+
+        .container { padding: 100px 15%; }
+        h1 { font-size: 4rem; font-weight: 900; }
+        
+        form { margin-top: 50px; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 40px 0; border-bottom: 1px solid #333; }
+        label { display: block; color: var(--accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+        input, textarea { width: 100%; background: transparent; border: none; color: white; font-size: 1.5rem; outline: none; font-family: 'Inter'; }
+        
+        .submit-btn { margin-top: 50px; padding: 20px 60px; background: var(--accent); color: white; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <nav>
+    <div class="logo"><img src="assets/logo.png" alt="Logo" style="height:30px; vertical-align:middle;"> NATURE <span style="color:var(--accent);">></span></div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="vision.html">Vision</a> <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    </nav>
+
+    <div class="container">
+        <h1>Let's <span>Connect.</span></h1>
+        <form action="http://your-ec2-ip:3000/submit-form" method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <label>Your Name</label>
+                        <input type="text" name="name" placeholder="Full Name" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Your Email</label>
+                        <input type="email" name="email" placeholder="email@address.com" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Project Details</label>
+                        <textarea name="message" rows="2" placeholder="Tell us more..."></textarea>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

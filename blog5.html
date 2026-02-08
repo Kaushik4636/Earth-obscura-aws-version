@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deep Tides | Nature Insights</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #A100FF; --black: #000000; --white: #FFFFFF; }
+        body { margin: 0; background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.8; }
+        
+        nav { display: flex; justify-content: space-between; padding: 25px 5%; align-items: center; border-bottom: 1px solid #222; }
+        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: -1px; text-decoration: none; color: white;}
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        .post-header {
+            width: 100%;
+            height: 75vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), #000000), url('blog_image/image5.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 10% 80px;
+            box-sizing: border-box;
+        }
+
+        .post-header-content { max-width: 900px; }
+        .category-tag { color: var(--accent); font-weight: 700; letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 20px; }
+        .post-header h1 { font-size: 5.5rem; font-weight: 900; margin: 0; text-transform: uppercase; line-height: 0.85; letter-spacing: -3px; }
+
+        .article-container { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; padding: 100px 10%; max-width: 1400px; margin: 0 auto; }
+        
+        .article-sidebar { border-top: 1px solid var(--accent); padding-top: 20px; }
+        .article-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #555; }
+        .article-sidebar p { font-size: 0.9rem; color: #888; }
+
+        .article-body { font-size: 1.3rem; color: #ccc; }
+        .article-body p { margin-bottom: 40px; }
+        .article-body h2 { color: white; font-size: 2.5rem; margin: 60px 0 30px; font-weight: 900; }
+        
+        .pull-quote { border-left: 4px solid var(--accent); padding-left: 30px; font-style: italic; color: white; font-size: 1.8rem; margin: 60px 0; }
+
+        .back-nav { padding: 50px 10% 100px; }
+        .back-btn { padding: 15px 40px; border: 1px solid #333; color: white; text-decoration: none; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; }
+        .back-btn:hover { background: var(--accent); border-color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NATURE <span style="color:var(--accent);">></span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="blogs.html">Back to Insights</a>
+        </div>
+    </nav>
+
+    <header class="post-header">
+        <div class="post-header-content">
+            <span class="category-tag">05. Marine Strategy</span>
+            <h1>Deep <br>Tides.</h1>
+        </div>
+    </header>
+
+    <div class="article-container">
+        <aside class="article-sidebar">
+            <h3>Focus</h3>
+            <p>Ocean Thermostat</p>
+            <br>
+            <h3>Scale</h3>
+            <p>Global Impact</p>
+        </aside>
+
+        <article class="article-body">
+            <p>The ocean is the planet's most efficient energy distribution network. Through massive current systems, it regulates temperature, moving heat from the equator to the poles and ensuring the global climate remains within habitable limits.</p>
+            
+            <div class="pull-quote">
+                "To understand the future of our planet, we must first understand the strategy of the deep."
+            </div>
+
+            <h2>The Conveyor Belt</h2>
+            <p>The <strong>Global Conveyor Belt</strong> is a constantly moving system of deep-ocean circulation driven by temperature and salinity. This thermo-haline circulation is vital for the health of marine life, as it cycles oxygen and nutrients throughout the deep sea.</p>
+            
+            
+            
+            <p>In our modern world, these patterns are shifting. As ice caps melt and fresh water enters the system, the density of the water changes, potentially slowing the belt. This highlights the urgent need for real-time marine monitoring and a deeper understanding of oceanic data analytics.</p>
+
+            <h2>Resilience in Depth</h2>
+            <p>Despite the immense pressure and total darkness of the deep ocean, life finds a way to thrive. The resilience found in deep-sea ecosystems—utilizing hydrothermal vents for energy rather than sunlight—provides a masterclass in <strong>innovation under constraint</strong>. It reminds us that even in the most challenging conditions, efficient systems can be built to last.</p>
+        </article>
+    </div>
+
+    <div class="back-nav">
+        <a href="blogs.html" class="back-btn">← Back to All Stories</a>
+    </div>
+
+</body>
+</html>

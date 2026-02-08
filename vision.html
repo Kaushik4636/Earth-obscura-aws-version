@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vision | My Nature Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #A100FF; --black: #000000; --white: #FFFFFF; }
+        body, html { margin: 0; padding: 0; background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; height: 100%; overflow-x: hidden; }
+
+        nav { display: flex; justify-content: space-between; padding: 25px 5%; align-items: center; position: absolute; width: 90%; z-index: 100; }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Top Half: Cinematic Video */
+        .video-section {
+            height: 50vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5); /* Darker overlay for better text contrast */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-overlay h1 { font-size: 4rem; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; }
+        .video-overlay span { color: var(--accent); }
+
+        /* Bottom Half: Content */
+        .content-section {
+            min-height: 50vh;
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .content-section h2 { font-size: 3rem; font-weight: 900; line-height: 1; margin: 0; }
+        .accent-line { width: 60px; height: 4px; background: var(--accent); margin-bottom: 25px; }
+
+        .content-text p { font-size: 1.15rem; color: #aaa; line-height: 1.8; margin-bottom: 30px; }
+        
+        /* Navigation Buttons */
+        .nav-footer { display: flex; gap: 40px; margin-top: 40px; }
+        .btn-link { text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
+        
+        .back { color: #555; }
+        .back:hover { color: var(--white); }
+        
+        .next { color: var(--accent); display: flex; align-items: center; }
+        .next:hover { letter-spacing: 4px; }
+        .next span { font-size: 1.5rem; margin-left: 10px; line-height: 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-weight:900;">NATURE <span style="color:var(--accent);">></span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="vision.html" style="color:var(--accent)">Vision</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="video-section">
+        <video autoplay muted loop playsinline>
+            <source src="assets/background.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            <h1>My <span>Vision.</span></h1>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div>
+            <div class="accent-line"></div>
+            <h2>Tech Meets <br>Terra.</h2>
+        </div>
+        <div class="content-text">
+            <p>I developed this project to demonstrate how modern web architecture can be used to tell powerful stories about our planet. By combining high-resolution visual assets with optimized cloud infrastructure, I’ve created an experience that is as fast as it is beautiful.</p>
+            
+            <p>From the sliding hero sections to the dynamic blog grid, every element was engineered with a focus on performance and "Accenture-style" minimalist design. This project serves as a showcase of my ability to bridge the gap between complex backend systems and premium frontend aesthetics.</p>
+            
+            <div class="nav-footer">
+                <a href="index.html" class="btn-link back">← Return Home</a>
+                <a href="blogs.html" class="btn-link next">Explore Blogs <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
