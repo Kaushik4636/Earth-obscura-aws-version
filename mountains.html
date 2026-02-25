@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountains | The Earth Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #050505; 
+            --accent: #FF3E00; /* Unique color for Mountains */
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('https://picsum.photos/id/1015/1920/1080') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg));
+        }
+
+        .hero-content {
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-content span {
+            font-size: 0.8rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            letter-spacing: -4px;
+            line-height: 0.9;
+            margin-top: 10px;
+        }
+
+        /* Journal Grid */
+        .journal-section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px; 
+        }
+
+        .section-header h2 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .entry-card {
+            text-decoration: none;
+            color: #fff;
+            group;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            background: #111;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1);
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .entry-card:hover .image-wrapper img {
+            filter: grayscale(0);
+            transform: scale(1.05);
+        }
+
+        .entry-card span {
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .entry-card h3 {
+            font-size: 1.5rem;
+            margin-top: 5px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        /* Back Button */
+        .back-nav {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+
+        .back-nav::before {
+            content: '←';
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+
+        .back-nav:hover::before { transform: translateX(-5px); }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero { height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="categories.html" class="back-nav">Back to Library</a>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span>Chapter 01</span>
+            <h1>MOUNTAINS</h1>
+        </div>
+    </header>
+
+    <main class="journal-section">
+        <div class="section-header">
+            <h2>Field Journal Entries</h2>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">06 Records Found</p>
+        </div>
+
+        <div class="grid">
+    <a href="m1.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=800&auto=format&fit=crop" alt="Snowy Peaks">
+        </div>
+        <span>Entry 01</span>
+        <h3>The Silent Giants of the North</h3>
+    </a>
+
+    <a href="m2.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop" alt="High Altitude Path">
+        </div>
+        <span>Entry 02</span>
+        <h3>Pathways Above the Clouds</h3>
+    </a>
+
+    <a href="m3.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=800&auto=format&fit=crop" alt="Glacier Ice">
+        </div>
+        <span>Entry 03</span>
+        <h3>Glacial Echoes</h3>
+    </a>
+
+    <a href="m4.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop" alt="Granite Mountain">
+        </div>
+        <span>Entry 04</span>
+        <h3>The Granite Sentinels</h3>
+    </a>
+
+    <a href="m5.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop" alt="Moody Mountain Shadows">
+        </div>
+        <span>Entry 05</span>
+        <h3>Andean Shadows</h3>
+    </a>
+
+    <a href="m6.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=800&auto=format&fit=crop" alt="Mountain Summit">
+        </div>
+        <span>Entry 06</span>
+        <h3>The Final Ascent</h3>
+    </a>
+</div>
+    </main>
+
+</body>
+</html>

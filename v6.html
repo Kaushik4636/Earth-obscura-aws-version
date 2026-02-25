@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sleeping Supervolcano | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #FF3D00; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        .img-box { margin: 60px 0; border: 1px solid var(--border); overflow: hidden; background: #111; }
+        .img-box img { width: 100%; display: block; filter: brightness(0.8); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .img-box:hover img { filter: brightness(1); transform: scale(1.03); }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="volcanoes.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal v6</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Magmatic Resurgence</span>
+        <h1>The Sleeping <span>Supervolcano.</span></h1>
+        
+        <p class="lead">Yellowstone is not a mountain; it is a hollowed-out scar in the Earth's crust, a caldera so vast it can only be fully appreciated from orbit.</p>
+
+        <p>A **Supervolcano** is defined by its ability to produce an eruption with a Volcanic Explosivity Index (VEI) of 8. Yellowstone has had three such cataclysmic events over the last 2.1 million years. The caldera was formed when the roof of a massive magma chamber collapsed after an eruption, leaving a basin roughly 55 by 72 kilometers wide.</p>
+
+        <div class="img-box" data-query="Yellowstone Grand Prismatic Spring aerial"></div>
+
+        <h2>The Rhyolitic Engine</h2>
+        <p>Yellowstone’s danger lies in its **Rhyolitic magma**. Rhyolite is extremely high in silica, making it incredibly thick and sticky. This viscosity prevents gas from escaping, leading to massive internal pressure. Unlike the basaltic flows of Hawaii, when Yellowstone erupts, it doesn't flow—it shatters the crust, ejecting thousands of cubic kilometers of ash and tephra.</p>
+
+        
+
+        <h2>Hydrothermal Signatures</h2>
+        <p>The "magmatic engine" is still very much alive just 5-10 kilometers beneath the surface. This heat fuels the world’s most diverse collection of hydrothermal features. Geysers like Old Faithful and the vibrant Grand Prismatic Spring are surface expressions of the boiling fluids circulating through the fractured volcanic rock, acting as pressure-relief valves for the titan below.</p>
+
+        <div class="img-box" data-query="Old Faithful geyser eruption Yellowstone"></div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="volcanoes.html" class="back-btn">Back to Volcano Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        document.querySelectorAll('.img-box').forEach(box => {
+            const query = box.getAttribute('data-query');
+            if (query) {
+                const search = query.replace(/\s+/g, ',');
+                box.innerHTML = `<img src="https://images.unsplash.com/featured/?${search}" alt="${query}">`;
+            }
+        });
+    </script>
+
+</body>
+</html>

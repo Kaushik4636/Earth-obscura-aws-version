@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceans | The Earth Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #050505; 
+            --accent: #0077BE; /* Deep Sea Blue */
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg));
+        }
+
+        .hero-content {
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-content span {
+            font-size: 0.8rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            letter-spacing: -4px;
+            line-height: 0.9;
+            margin-top: 10px;
+        }
+
+        /* Journal Grid */
+        .journal-section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .entry-card {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            background: #111;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1);
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .entry-card:hover .image-wrapper img {
+            filter: grayscale(0);
+            transform: scale(1.05);
+        }
+
+        .entry-card span {
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .entry-card h3 {
+            font-size: 1.5rem;
+            margin-top: 5px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        /* Back Button */
+        .back-nav {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+
+        .back-nav::before {
+            content: '←';
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+
+        .back-nav:hover::before { transform: translateX(-5px); }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero { height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="categories.html" class="back-nav">Back to Library</a>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span>Chapter 04</span>
+            <h1>OCEANS</h1>
+        </div>
+    </header>
+
+    <main class="journal-section">
+        <div class="section-header">
+            <h2>Field Journal Entries</h2>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">06 Records Found</p>
+        </div>
+
+        <div class="grid">
+            <a href="o1.html" class="entry-card">
+                <div class="image-wrapper">
+                    <img src="https://static.vecteezy.com/system/resources/previews/013/082/348/large_2x/bright-beautiful-seascape-sandy-beach-clouds-reflected-in-the-water-natural-minimalistic-background-and-texture-panoramic-view-banner-sea-ocean-ecology-nature-concept-blue-sky-clouds-idyllic-photo.jpg" alt="Surface">
+                </div>
+                <span>Entry 01</span>
+                <h3>The Infinite Blue</h3>
+            </a>
+
+            <a href="o2.html" class="entry-card">
+                <div class="image-wrapper">
+                    <img src="https://w0.peakpx.com/wallpaper/457/274/HD-wallpaper-blue-beach-rock-ocean-sky-clouds-beach-tide-water-green-moss-day-nature-blue.jpg" alt="Waves">
+                </div>
+                <span>Entry 02</span>
+                <h3>Tidal Rhythms</h3>
+            </a>
+
+            <a href="o3.html" class="entry-card">
+                <div class="image-wrapper">
+                    <img src="https://th-thumbnailer.cdn-si-edu.com/nOUXAoF_jivoqkaLN8SlULTnkBo=/1026x684/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/2e/40/2e40ed82-5cda-4068-8457-257d3f100b9d/42-25763390.jpg" alt="Deep">
+                </div>
+                <span>Entry 03</span>
+                <h3>Abyssal Plains</h3>
+            </a>
+
+            <a href="o4.html" class="entry-card">
+                <div class="image-wrapper">
+                    <img src="https://www.barchemagazine.com/wp-content/uploads/2023/12/Sea-Environment-800x600.jpg" alt="Coral">
+                </div>
+                <span>Entry 04</span>
+                <h3>The Living Reef</h3>
+            </a>
+
+            <a href="o5.html" class="entry-card">
+                <div class="image-wrapper">
+                    <img src="https://static.vecteezy.com/system/resources/previews/070/518/565/non_2x/stormy-sea-and-cliffs-with-waves-crashing-into-the-ocean-photo.jpg" alt="Coast">
+                </div>
+                <span>Entry 05</span>
+                <h3>Shattered Cliffs</h3>
+            </a>
+
+            <a href="o6.html" class="entry-card">
+                <div class="image-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWPe8W1t0zQ3j8GuAaurb8lbDvU1Ka5oGndA&s" alt="Storm">
+                </div>
+                <span>Entry 06</span>
+                <h3>Midnight Currents</h3>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savanna | The Earth Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; --accent: #FFC107; --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        .hero { 
+            height: 70vh; width: 100%; position: relative; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; 
+            background: url('https://www.globalbioenergy.org/wp-content/uploads/2025/07/Savanna-Vegetation-1024x683.jpeg') center/cover no-repeat; 
+            background-attachment: fixed; 
+        }
+        .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg)); }
+        
+        .hero-content { z-index: 2; text-align: center; }
+        .hero-content span { font-size: 0.8rem; letter-spacing: 10px; text-transform: uppercase; color: var(--accent); font-weight: 900; }
+        .hero-content h1 { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-top: 10px; }
+        
+        .journal-section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-header { 
+            display: flex; justify-content: space-between; align-items: flex-end; 
+            margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 20px; 
+        }
+        .section-header h2 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 5px; color: rgba(255,255,255,0.5); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+        
+        .entry-card { text-decoration: none; color: #fff; }
+        .image-wrapper { width: 100%; aspect-ratio: 16/10; overflow: hidden; background: #111; margin-bottom: 20px; border: 1px solid var(--border); }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        
+        .entry-card:hover .image-wrapper img { filter: grayscale(0); transform: scale(1.05); }
+        .entry-card span { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 900; }
+        .entry-card h3 { font-size: 1.5rem; margin-top: 5px; font-weight: 400; letter-spacing: -0.5px; }
+        
+        .back-nav { 
+            position: fixed; top: 40px; left: 40px; z-index: 100; text-decoration: none; color: #fff; 
+            font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; 
+            mix-blend-mode: difference; 
+        }
+        .back-nav::before { content: '←'; margin-right: 10px; transition: transform 0.3s; }
+        .back-nav:hover::before { transform: translateX(-5px); }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero { height: 50vh; } }
+    </style>
+</head>
+<body>
+
+    <a href="categories.html" class="back-nav">Back to Library</a>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span>Chapter 10</span>
+            <h1>SAVANNA</h1>
+        </div>
+    </header>
+
+    <main class="journal-section">
+        <div class="section-header">
+            <h2>Field Journal Entries</h2>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">06 Records Found</p>
+        </div>
+
+        <div class="grid">
+            <a href="s1.html" class="entry-card">
+                <div class="image-wrapper"><img src="https://images.pond5.com/aerial-elephant-group-traveling-through-footage-074688896_iconl.jpeg"></div>
+                <span>Entry 01</span>
+                <h3>The Endless Plain</h3>
+            </a>
+            <a href="s2.html" class="entry-card">
+                <div class="image-wrapper"><img src="https://cdn.conscious-explorer.com/keycdn/file/6b989d4efefd3bc4b584634ca405db58ef47fb6e0f7614a3d0e4a7ad83d3ae5b/NNEohuRe65WV53Y6.webp"></div>
+                <span>Entry 02</span>
+                <h3>Upside-Down Forest</h3>
+            </a>
+            <a href="s3.html" class="entry-card">
+                <div class="image-wrapper"><img src="https://thumbs.dreamstime.com/b/red-ground-road-bush-savanna-tsavo-west-kenya-africa-29601469.jpg"></div>
+                <span>Entry 03</span>
+                <h3>The Red Savanna</h3>
+            </a>
+            <a href="s4.html" class="entry-card">
+                <div class="image-wrapper"><img src="https://www.shutterstock.com/image-photo/drone-shot-bush-near-bedourie-260nw-2606191483.jpg"></div>
+                <span>Entry 04</span>
+                <h3>The Flooding Plains</h3>
+            </a>
+            <a href="s5.html" class="entry-card">
+                <div class="image-wrapper"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShhxFspKiXEKjsQcFKpTzAKr3jUiR2JbcwDA&s"></div>
+                <span>Entry 05</span>
+                <h3>The White Place</h3>
+            </a>
+            <a href="s6.html" class="entry-card">
+                <div class="image-wrapper"><img src="https://thumbs.dreamstime.com/b/african-landscape-kruger-national-park-south-africa-44505870.jpg"></div>
+                <span>Entry 06</span>
+                <h3>Bushveld Frontier</h3>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>

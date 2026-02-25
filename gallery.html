@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Gallery | Nature by Kaushik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --accent: #A100FF;
+            --bg: #050505;
+            --border: rgba(255,255,255,0.1);
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION (Preserved from your code) --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .logo { font-weight: 900; font-size: 1.5rem; text-decoration: none; color: #fff; letter-spacing: -1px; }
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { opacity: 1; color: var(--accent); }
+
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: #111;
+            min-width: 200px;
+            border: 1px solid var(--border);
+            padding: 10px 0;
+            z-index: 1001;
+        }
+        .dropdown:hover .dropdown-content { display: flex; flex-direction: column; }
+        .dropdown-content a { padding: 10px 20px; margin: 0; text-transform: none; }
+
+        /* --- GALLERY HEADER --- */
+        .gallery-header {
+            padding: 100px 5% 50px;
+            text-align: center;
+        }
+        .gallery-header p { color: var(--accent); letter-spacing: 8px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700; }
+        .gallery-header h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 900; margin-top: 15px; letter-spacing: -2px; }
+
+        /* --- UNIFORM GRID SYSTEM --- */
+        .gallery-container {
+            padding: 0 5% 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+            padding-bottom: 20px;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+        }
+
+        .img-wrapper {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Makes all images perfect squares */
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: 0.8s;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .info-box {
+            padding: 0 20px;
+        }
+
+        .info-box span {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .info-box h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 60px;
+            background: #000;
+            border-top: 1px solid var(--border);
+        }
+        footer p { font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">NATURE <span style="color:var(--accent);">+</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="vision.html">Vision</a>
+        <div class="dropdown">
+            <a href="categories.html">Categories ▾</a>
+            <div class="dropdown-content">
+                <a href="mountains.html">Mountains</a>
+                <a href="oceans.html">Oceans</a>
+                <a href="deserts.html">Deserts</a>
+                <a href="forests.html">Forests</a>
+                <a href="islands.html">Islands</a>
+                <a href="wildlife.html">Wildlife</a>
+                <a href="arctic.html">Arctic</a>
+                <a href="rainforests.html">Rainforests</a>
+                <a href="canyons.html">Canyons</a>
+                <a href="wetlands.html">Wetlands</a>
+            </div>
+        </div>
+        <a href="gallery.html" style="color:var(--accent)">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<div class="gallery-header">
+    <p>Visual Archive</p>
+    <h1>Raw Atmosphere.</h1>
+</div>
+
+<div class="gallery-container" id="galleryGrid"></div>
+
+<footer>
+    <p>© 2026 Kaushik Madhavan. Crafted with passion. All rights reserved.</p>
+</footer>
+
+<script>
+const galleryData = [
+    { title: "Mist Peaks", cat: "Mountains", id: "1501785888041-af3ef285b470" },
+    { title: "Glacial Flow", cat: "Arctic", id: "1508610048659-a06f997b6cce" },
+    { title: "Desert Dunes", cat: "Deserts", id: "1500534314209-a25ddb2bd429" },
+    { title: "Pine Grove", cat: "Forests", id: "1500674425229-f692875b0ab7" },
+    { title: "Ocean Abyss", cat: "Oceans", id: "1507525428034-b723cf961d3e" },
+    { title: "Mountain Ridge", cat: "Mountains", id: "1501769214405-16f84a02b9d7" },
+    { title: "Icy Expanse", cat: "Arctic", id: "1482192596544-9efc3dd2eb4c" },
+    { title: "Sahara Glow", cat: "Deserts", id: "1589501597137-c6485f70df60" },
+    { title: "Misty Forest", cat: "Forests", id: "1441974231531-c6227db76b6e" },
+    { title: "Coral Coast", cat: "Oceans", id: "1493558103817-58b2924bce98" },
+    { title: "Canyon Shadows", cat: "Canyons", id: "1516569422606-407b7f8d98c8" },
+    { title: "Arctic Night", cat: "Arctic", id: "1455763916899-e8b50eca9967" },
+    { title: "Desert Sunrise", cat: "Deserts", id: "1470240731273-7821a6eeb6bd" },
+    { title: "Forest Waterfall", cat: "Forests", id: "1504198453319-5ce911bafcde" },
+    { title: "High Sierra", cat: "Mountains", id: "1464822759023-93666b69603f" },
+    { title: "Frozen Tundra", cat: "Arctic", id: "1511919884226-fd3cad34687c" },
+    { title: "Golden Dust", cat: "Deserts", id: "1470071459604-3b5ec3a7fe05" },
+    { title: "Sunlit Grove", cat: "Forests", id: "1500530855697-b586d89ba3ee" },
+    { title: "Azure Waves", cat: "Oceans", id: "1505118380757-c8847f54a020" },
+    { title: "Island Bay", cat: "Islands", id: "1505832018823-04902d1858a7" },
+    { title: "Wild Fox", cat: "Wildlife", id: "1474533883693-5f5c38c8461d" },
+    { title: "Jungle Roof", cat: "Rainforests", id: "1504198266285-1659872e6590" },
+    { title: "Wetland Reeds", cat: "Wetlands", id: "1482192505345-5655af888cc4" },
+    { title: "Red Canyon", cat: "Canyons", id: "1439066615919-e58f000392f4" },
+    { title: "Bamboo Path", cat: "Forests", id: "1453272063836-5302562fd3d4" },
+    { title: "Volcanic Ash", cat: "Mountains", id: "1433085041357-47d519d1f05e" },
+    { title: "Crystal Blue", cat: "Oceans", id: "1546500840-ae3db0a2072e" },
+    { title: "Lone Wolf", cat: "Wildlife", id: "1518173946687-9f032338b97d" },
+    { title: "Starry Ridge", cat: "Mountains", id: "1477959858096-2e74a16919a7" },
+    { title: "Zion Rock", cat: "Canyons", id: "1446775822321-70e178a0f2ff" },
+    { title: "Polar Bear", cat: "Arctic", id: "1504100326013-35b1cc4c58d2" },
+    { title: "African Plains", cat: "Wildlife", id: "1547466532-f3f17e140cc0" },
+    { title: "Hidden Falls", cat: "Wetlands", id: "1432405972618-c60b0222b8f9" },
+    { title: "Stormy Sky", cat: "Canyons", id: "1516912233157-1bf74b9044cc" },
+    { title: "Blue Lagoon", cat: "Islands", id: "1501850691598-c8d4a9745821" },
+    { title: "Morning Haze", cat: "Forests", id: "1502082553048-4bd242ee4747" },
+    { title: "Deep Sea", cat: "Oceans", id: "1509316785282-ef338a1f39f3" },
+    { title: "Red Fox", cat: "Wildlife", id: "1510853675132-5022304073b8" },
+    { title: "Snowy Owl", cat: "Wildlife", id: "1517519014107-16029881855e" },
+    { title: "Cliff Arch", cat: "Oceans", id: "1519046904884-53103b34b206" },
+    { title: "Emerald Bay", cat: "Islands", id: "1470076867243-d4834b3f8850" },
+    { title: "Autumn Woods", cat: "Forests", id: "1501494067350-b8c8f942ab31" },
+    { title: "Jagged Peak", cat: "Mountains", id: "1491553895911-0534c818c135" },
+    { title: "Stellar Night", cat: "Mountains", id: "1441148344965-03b1080fa997" },
+    { title: "Mossy River", cat: "Wetlands", id: "1523712999617-66916f2f0b19" },
+    { title: "Golden Dune", cat: "Deserts", id: "1509316975874-598cc8a4d210" },
+    { title: "Rainforest Leaf", cat: "Rainforests", id: "1480044965905-02098a4835d6" },
+    { title: "Elephant Path", cat: "Wildlife", id: "1528153323089-77aef904290d" },
+    { title: "Basalt Shore", cat: "Oceans", id: "1524231759-fdf742682386" },
+    { title: "Silent Lake", cat: "Wetlands", id: "1490730141103-6c06a695d108" }
+];
+
+const galleryGrid = document.getElementById("galleryGrid");
+
+galleryData.forEach(img => {
+    const div = document.createElement("div");
+    div.className = "gallery-item";
+    div.innerHTML = `
+        <div class="img-wrapper">
+            <img src="https://images.unsplash.com/photo-${img.id}?auto=format&fit=crop&w=800&q=80" alt="${img.title}" loading="lazy"/>
+        </div>
+        <div class="info-box">
+            <span>${img.cat}</span>
+            <h3>${img.title}</h3>
+        </div>
+    `;
+    galleryGrid.appendChild(div);
+});
+</script>
+
+</body>
+</html>

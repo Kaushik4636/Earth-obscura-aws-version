@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE EARTH LIBRARY | Terra Obscura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #050505; 
+            --border: rgba(255, 255, 255, 0.1); 
+            --accent: #A100FF; 
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            overflow: hidden; 
+            height: 100vh;
+        }
+
+        /* --- GLOBAL NAVIGATION --- */
+        .global-nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 35px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            mix-blend-mode: difference;
+        }
+
+        .nav-logo {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: #fff; }
+
+        /* Dropdown Logic */
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0;
+            background: #000;
+            min-width: 160px;
+            border: 1px solid var(--border);
+            padding: 10px 0;
+        }
+        .dropdown:hover .dropdown-content { display: flex; flex-direction: column; }
+        .dropdown-content a { padding: 10px 20px; text-transform: none; letter-spacing: 1px; }
+
+        /* --- ACCORDION CONTAINER --- */
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            align-items: stretch;
+            background: #000;
+        }
+
+        .landscape-gate {
+            position: relative;
+            flex: 1;
+            min-width: 0; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border-right: 1px solid var(--border);
+            transition: flex 0.8s cubic-bezier(0.23, 1, 0.32, 1), filter 0.4s;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(1);
+        }
+
+        .landscape-gate::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        .landscape-gate:hover {
+            flex: 6; 
+            filter: grayscale(0);
+        }
+
+        .landscape-gate:hover::after { background: rgba(0,0,0,0.2); }
+
+        .gate-title {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 10px;
+            z-index: 2;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+        .gate-name {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #fff;
+            z-index: 2;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            white-space: nowrap;
+            transition: 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .landscape-gate:hover .gate-name {
+            writing-mode: horizontal-tb;
+            transform: rotate(0deg) scale(1.5);
+            letter-spacing: 10px;
+        }
+
+        /* --- CORRECTED 4K IMAGE URLS --- */
+        .g1 { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'); } /* Mountains */
+        .g2 { background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/BorneoRainforest_DSC_9267.JPG'); } /* Forests */
+        .g3 { background-image: url('https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&w=1200&q=80'); } /* Deserts */
+        .g4 { background-image: url('https://www.samanyagyan.com/images/post/list-of-major-oceans-of-the-world-in-hindi.jpg'); } /* Oceans */
+        .g5 { background-image: url('https://www.shutterstock.com/image-photo/artic-aurora-borealis-night-sky-600nw-1560877451.jpg'); } /* Arctic */
+        .g6 { background-image: url('https://th-thumbnailer.cdn-si-edu.com/2Ael0LC-kNQlYMCMpqQBwwlaDwA=/1000x750/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/cb/87/cb87fada-31dd-40eb-8d1d-e3b5d738d327/istock-120911394.jpg'); } /* Canyons */
+        .g7 { background-image: url('https://cdn.creatureandcoagency.com/uploads/2013/11/volcano-facts-featured-scaled.jpg'); } /* Volcanoes */
+        .g8 { background-image: url('https://static.toiimg.com/photo/109986991.cms'); } /* Coastal */
+        .g9 { background-image: url('https://static.toiimg.com/thumb/107084219/Loktak-wetland.jpg?width=1200&height=900'); } /* Wetlands */
+        .g10 { background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80'); } /* Savanna */
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .gate-name, .gate-title { writing-mode: horizontal-tb; transform: rotate(0); }
+            .global-nav { padding: 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="global-nav">
+        <a href="index.html" class="nav-logo">Terra Obscura</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="vision.html">Vision</a>
+            
+            <div class="dropdown">
+    <a href="categories.html">Categories ▾</a>
+    <div class="dropdown-content">
+        <a href="mountains.html">Mountains</a>
+        <a href="oceans.html">Oceans</a>
+        <a href="deserts.html">Deserts</a>
+        <a href="forests.html">Forests</a>
+        <a href="islands.html">Islands</a>
+        <a href="wildlife.html">Wildlife</a>
+        <a href="arctic.html">Arctic</a>
+        <a href="rainforests.html">Rainforests</a>
+        <a href="canyons.html">Canyons</a>
+        <a href="wetlands.html">Wetlands</a>
+    </div>
+</div>
+
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="mountains.html" class="landscape-gate g1"><span class="gate-title">01</span><span class="gate-name">Mountains</span></a>
+        <a href="forests.html" class="landscape-gate g2"><span class="gate-title">02</span><span class="gate-name">Forests</span></a>
+        <a href="deserts.html" class="landscape-gate g3"><span class="gate-title">03</span><span class="gate-name">Deserts</span></a>
+        <a href="oceans.html" class="landscape-gate g4"><span class="gate-title">04</span><span class="gate-name">Oceans</span></a>
+        <a href="arctic.html" class="landscape-gate g5"><span class="gate-title">05</span><span class="gate-name">Arctic</span></a>
+        <a href="canyons.html" class="landscape-gate g6"><span class="gate-title">06</span><span class="gate-name">Canyons</span></a>
+        <a href="volcanoes.html" class="landscape-gate g7"><span class="gate-title">07</span><span class="gate-name">Volcanoes</span></a>
+        <a href="coastal.html" class="landscape-gate g8"><span class="gate-title">08</span><span class="gate-name">Coastal</span></a>
+        <a href="wetlands.html" class="landscape-gate g9"><span class="gate-title">09</span><span class="gate-name">Wetlands</span></a>
+        <a href="savanna.html" class="landscape-gate g10"><span class="gate-title">10</span><span class="gate-name">Savanna</span></a>
+    </div>
+
+</body>
+</html>

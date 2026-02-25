@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Temperate Exception | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #00E676; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        .img-box { margin: 60px 0; border: 1px solid var(--border); overflow: hidden; background: #111; }
+        .img-box img { width: 100%; display: block; filter: brightness(0.8); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .img-box:hover img { filter: brightness(1); transform: scale(1.03); }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="rainforests.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal r6</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Bio-Geographic Isolation</span>
+        <h1>The Southern <span>Sanctuary.</span></h1>
+        
+        <p class="lead">Locked between the Andes Mountains and the Pacific Ocean, the Valdivian forest is a "biogeographic island"—a temperate rainforest that has evolved in total isolation for millions of years.</p>
+
+        <p>Unlike the steaming jungles of the equator, the Valdivian is a **temperate rainforest**. It is characterized by cool summers and wet, mild winters. This isolation has resulted in a high degree of endemism; over 90% of the seed plants found here exist nowhere else on the planet.</p>
+
+        <div class="img-box" data-query="Valdivian temperate rainforest Chile moss mountains"></div>
+
+        <h2>The Alerce: Sentinels of Time</h2>
+        <p>The crown jewel of the Valdivian is the <strong>Fitzroya cupressoides</strong>, or Alerce tree. These conifers are among the oldest living things on Earth, with some individuals verified to be over 3,600 years old. Their slow growth rate is an adaptation to the nutrient-poor, waterlogged soils of the Chilean fjords, allowing them to outlast nearly every other tree species in the southern hemisphere.</p>
+
+        [Image showing the rings and immense scale of an ancient Alerce tree]
+
+        <h2>Glacial Refugia</h2>
+        <p>During the last Ice Age, while much of the world's northern forests were wiped out by advancing glaciers, portions of the Valdivian coast remained ice-free. These areas served as <strong>refugia</strong>—biological lifeboats where species survived and later recolonized the continent. This deep history is why the forest retains a "primitive" feel, dominated by ancient ferns and bamboo understories.</p>
+
+        <div class="img-box" data-query="Chilean rainforest waterfalls ferns"></div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="rainforests.html" class="back-btn">Back to Rainforest Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        document.querySelectorAll('.img-box').forEach(box => {
+            const query = box.getAttribute('data-query');
+            if (query) {
+                const search = query.replace(/\s+/g, ',');
+                box.innerHTML = `<img src="https://images.unsplash.com/featured/?${search}" alt="${query}">`;
+            }
+        });
+    </script>
+
+</body>
+</html>

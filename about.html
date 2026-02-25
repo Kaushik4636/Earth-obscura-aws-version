@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Nature by Kaushik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #A100FF;
+            --bg: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- UNIFIED NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            opacity: 0.8;
+        }
+        .nav-links a:hover { opacity: 1; color: var(--accent); }
+
+        .dropdown { position: relative; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #111;
+            min-width: 200px;
+            border: 1px solid var(--border);
+            padding: 10px 0;
+            z-index: 100;
+        }
+        .dropdown:hover .dropdown-content { display: flex; flex-direction: column; }
+        .dropdown-content a { margin: 0; padding: 10px 20px; text-transform: none; }
+
+        /* --- HERO SECTION --- */
+        .about-hero {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-hero p { color: var(--accent); letter-spacing: 5px; text-transform: uppercase; font-weight: 700; font-size: 0.8rem; margin-bottom: 15px; }
+        .about-hero h1 { font-size: 4rem; font-weight: 900; letter-spacing: -2px; }
+
+        /* --- STORY SECTIONS --- */
+        .content-wrap { padding: 100px 10%; max-width: 1400px; margin: 0 auto; }
+        
+        .story-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .story-text h2 { font-size: 2.5rem; margin-bottom: 25px; font-weight: 900; letter-spacing: -1px; }
+        .story-text h2 span { color: var(--accent); }
+        .story-text p { font-size: 1.1rem; color: #ccc; margin-bottom: 20px; text-align: justify; }
+
+        .story-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        /* --- THE JOURNEY BAR --- */
+        .journey-highlight {
+            background: #111;
+            padding: 80px 10%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin: 100px 0;
+        }
+        .journey-highlight h3 { font-size: 2rem; margin-bottom: 20px; }
+        .journey-highlight p { max-width: 800px; margin: 0 auto; color: #888; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 50px;
+            background: #000;
+            border-top: 1px solid var(--border);
+        }
+        footer p { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: #555; }
+
+        @media (max-width: 900px) {
+            .story-block { grid-template-columns: 1fr; gap: 40px; }
+            .about-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NATURE <span style="color:var(--accent);">+</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" style="color:var(--accent);">About</a>
+            <a href="vision.html">Vision</a>
+            <div class="dropdown">
+    <a href="categories.html">Categories ▾</a>
+    <div class="dropdown-content">
+        <a href="mountains.html">Mountains</a>
+        <a href="oceans.html">Oceans</a>
+        <a href="deserts.html">Deserts</a>
+        <a href="forests.html">Forests</a>
+        <a href="islands.html">Islands</a>
+        <a href="wildlife.html">Wildlife</a>
+        <a href="arctic.html">Arctic</a>
+        <a href="rainforests.html">Rainforests</a>
+        <a href="canyons.html">Canyons</a>
+        <a href="wetlands.html">Wetlands</a>
+    </div>
+</div>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="about-hero">
+        <p>A Personal Project by Kaushik Madhavan</p>
+        <h1>The Soul of the <span>Wild.</span></h1>
+    </div>
+
+    <div class="content-wrap">
+        <div class="story-block">
+            <div class="story-text">
+                <h2>Nature is My <span>Blueprint.</span></h2>
+                <p>My journey with nature didn't start in a book; it started in the raw silence of the outdoors. Since I was young, I have been captivated by the 'hidden engineering' of the earth—the way a river carves through stone over a million years and how a single leaf follows the golden ratio.</p>
+                <p>To me, nature isn't just something to look at; it is a complex, breathing library of data and beauty. I find peace in the roar of the ocean and inspiration in the stillness of a mountain peak.</p>
+            </div>
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80" alt="Nature Passion">
+            </div>
+        </div>
+
+        <div class="story-block">
+            <div class="story-image" style="order: 2;">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Coding Journey">
+            </div>
+            <div class="story-text" style="order: 1;">
+                <h2>Why I Built <span>This.</span></h2>
+                <p>As I developed my skills in technology, I noticed a gap. We spend so much time behind screens that we forget the complex beauty of the world outside. I started this journey to build a digital bridge between code and the canopy.</p>
+                <p>This project began as a local version to test a vision: can we use modern web architecture to tell a better story about our planet? From the smooth sliding transitions to the detailed blog categorization, every line of code is my way of paying tribute to the environment.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="journey-highlight">
+        <h3>Developing for the Future</h3>
+        <p>Currently, this platform is a local test of design and flow. My next step is integrating AWS RDS to handle a massive database of conservation stories, ensuring that my passion for nature is backed by reliable, high-performance technology.</p>
+    </div>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. Crafted with passion. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

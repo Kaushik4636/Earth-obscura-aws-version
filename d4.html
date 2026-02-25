@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episodic Life | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #FFB300; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="deserts.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal d4</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Temporal Biology</span>
+        <h1>Episodic <span>Life.</span></h1>
+        
+        <p class="lead">Deserts are not empty; they are full of life that is simply holding its breath. In the arid dust, billions of organisms exist in a state of suspended animation, waiting for the sky to break.</p>
+
+        <p>This biological strategy is known as <strong>Cryptobiosis</strong>—life in a hidden state. For many desert inhabitants, the active stage of their life cycle is the exception, not the rule. They spend 99% of their existence as desiccated seeds, eggs, or spores, essentially bypassing time until environmental conditions become survivable.</p>
+
+        
+
+        <h2>The Chemical Lock</h2>
+        <p>Desert seeds are programmed with a chemical inhibitor that prevents germination. This inhibitor is not removed by time, but by a specific volume of water. A light misting isn't enough; it takes a significant rainfall to "wash" the chemicals away, ensuring that the seed only wakes up when there is enough moisture in the soil to support its entire, lightning-fast life cycle.</p>
+
+        <h2>The Five-Week Lifecycle</h2>
+        <p>Once triggered, these "ephemeral" plants move at an incredible pace. In just a few weeks, they must germinate, grow, flower, and produce a new generation of seeds before the sun bakes the earth dry again. It is a biological sprint where the metabolic rate is pushed to its absolute limit, turning a brown wasteland into a "Superbloom" of color almost overnight.</p>
+
+        <h2>Cryptobiotic Crusts</h2>
+        <p>It's not just plants. The desert floor is often covered in a "living skin" made of cyanobacteria, lichens, and mosses. When dry, this crust is brittle and appears dead. However, within seconds of being touched by water, these organisms resume photosynthesis. They act as the desert’s stabilizers, pinning down the sand and fixing nitrogen into the nutrient-poor soil, creating the foundation for all other episodic life to thrive.</p>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="deserts.html" class="back-btn">Back to Deserts Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+</html>

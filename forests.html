@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forests | The Earth Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; --accent: #2D5A27; --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .hero { height: 70vh; width: 100%; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; background: url('https://static.toiimg.com/thumb/resizemode-4,width-1280,height-720,msid-124127920/124127920.jpg') center/cover no-repeat; background-attachment: fixed; }
+        .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg)); }
+        .hero-content { z-index: 2; text-align: center; }
+        .hero-content span { font-size: 0.8rem; letter-spacing: 10px; text-transform: uppercase; color: var(--accent); font-weight: 900; }
+        .hero-content h1 { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-top: 10px; }
+        .journal-section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .section-header h2 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 5px; color: rgba(255,255,255,0.5); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+        .entry-card { text-decoration: none; color: #fff; }
+        .image-wrapper { width: 100%; aspect-ratio: 16/10; overflow: hidden; background: #111; margin-bottom: 20px; border: 1px solid var(--border); }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .entry-card:hover .image-wrapper img { filter: grayscale(0); transform: scale(1.05); }
+        .entry-card span { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 900; }
+        .entry-card h3 { font-size: 1.5rem; margin-top: 5px; font-weight: 400; letter-spacing: -0.5px; }
+        .back-nav { position: fixed; top: 40px; left: 40px; z-index: 100; text-decoration: none; color: #fff; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; mix-blend-mode: difference; }
+        .back-nav::before { content: '←'; margin-right: 10px; transition: transform 0.3s; }
+        .back-nav:hover::before { transform: translateX(-5px); }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero { height: 50vh; } }
+    </style>
+</head>
+<body>
+    <a href="categories.html" class="back-nav">Back to Library</a>
+    <header class="hero"><div class="hero-content"><span>Chapter 02</span><h1>FORESTS</h1></div></header>
+    <main class="journal-section">
+        <div class="section-header"><h2>Field Journal Entries</h2><p style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">06 Records Found</p></div>
+        <div class="grid">
+            <a href="f1.html" class="entry-card"><div class="image-wrapper"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/64/51/17/the-ancient-forest.jpg?w=900&h=500&s=1"></div><span>Entry 01</span><h3>The Ancient Canopy</h3></a>
+            <a href="f2.html" class="entry-card"><div class="image-wrapper"><img src="https://static.vecteezy.com/system/resources/previews/051/710/750/large_2x/lush-green-moss-covering-forest-floor-with-tall-trees-in-the-background-photo.jpg"></div><span>Entry 02</span><h3>Mist and Moss</h3></a>
+            <a href="f3.html" class="entry-card"><div class="image-wrapper"><img src="https://www.shutterstock.com/image-photo/breathtaking-view-deep-verdant-ravine-260nw-2655030289.jpg"></div><span>Entry 03</span><h3>The Deep Verdant</h3></a>
+            <a href="f4.html" class="entry-card"><div class="image-wrapper"><img src="https://www.whisperingpinesfarmstay.com/assets/img/gallery/gallery_1_12.jpg"></div><span>Entry 04</span><h3>Whispering Pines</h3></a>
+            <a href="f5.html" class="entry-card"><div class="image-wrapper"><img src="https://www.shutterstock.com/image-photo/autumnal-misty-morning-forest-shadows-260nw-504103873.jpg"></div><span>Entry 05</span><h3>Autumnal Shadows</h3></a>
+            <a href="f6.html" class="entry-card"><div class="image-wrapper"><img src="https://img.freepik.com/premium-photo/rainforest-rhythms-jungle-beats_960396-169897.jpg"></div><span>Entry 06</span><h3>Rainforest Rhythms</h3></a>
+        </div>
+    </main>
+</body>
+</html>

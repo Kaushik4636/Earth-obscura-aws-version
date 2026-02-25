@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Red Savanna | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #FFC107; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        .img-box { margin: 60px 0; border: 1px solid var(--border); overflow: hidden; background: #111; }
+        .img-box img { width: 100%; display: block; filter: brightness(0.8); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .img-box:hover img { filter: brightness(1); transform: scale(1.03); }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="savanna.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal s3</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Monsoonal Pulsing</span>
+        <h1>The Red <span>Savanna.</span></h1>
+        
+        <p class="lead">Northern Australia is home to the world’s largest intact tropical savanna—a rugged expanse of red earth, ancient eucalyptus, and iron-rich stones.</p>
+
+        <p>The Australian savanna is defined by its <strong>predictable seasonality</strong>. During the "Big Wet," monsoonal rains transform the parched red plains into lush wetlands. During the "Big Dry," the landscape becomes a tinderbox. This cycle has forced life here to become master of adaptation, particularly the vegetation, which must survive both total submergence and intense wildfire within the same year.</p>
+
+        <div class="img-box" data-query="Northern Australia tropical savanna eucalyptus trees"></div>
+
+        <h2>Magnetic Architecture</h2>
+        <p>One of the most striking features of the Northern Territory are the <strong>Magnetic Termite Mounds</strong>. These towering structures are thin, flat, and always aligned north-to-south. This orientation acts as a passive solar climate control system: the thin edge faces the midday sun to minimize heat, while the broad sides catch the gentle morning and evening warmth.</p>
+        
+        
+
+        <h2>The Eucalypt Dominance</h2>
+        <p>Unlike African or South American savannas, Australia's is dominated by the genus <strong>Eucalyptus</strong>. These trees are highly flammable due to their oil-rich leaves, but they are also incredibly resilient. Many species possess "epicormic buds" beneath their bark, allowing them to sprout new leaves directly from the trunk almost immediately after a fire has passed through.</p>
+
+        <div class="img-box" data-query="Red kangaroo Australian savanna outback"></div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="savanna.html" class="back-btn">Back to Savanna Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        document.querySelectorAll('.img-box').forEach(box => {
+            const query = box.getAttribute('data-query');
+            if (query) {
+                const search = query.replace(/\s+/g, ',');
+                box.innerHTML = `<img src="https://images.unsplash.com/featured/?${search}" alt="${query}">`;
+            }
+        });
+    </script>
+
+</body>
+</html>

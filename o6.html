@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Carbon | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #00F0FF; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="oceans.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal o6</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Biosphere Respiration</span>
+        <h1>Blue <span>Carbon.</span></h1>
+        
+        <p class="lead">The ocean is the planet's greatest carbon vault. While forests get the fame, the deep blue is doing the heavy lifting—sequestering more carbon than all terrestrial life combined.</p>
+
+        <p><strong>Blue Carbon</strong> refers to the carbon captured by the world's ocean and coastal ecosystems. This isn't just a chemical process of the water absorbing CO2; it is a biological effort involving everything from microscopic phytoplankton to the largest mammals to ever live.</p>
+
+        
+
+        <h2>The Biological Pump</h2>
+        <p>It starts at the surface. Phytoplankton absorb CO2 to grow. When they die, or when the animals that eat them produce waste, that carbon sinks toward the seafloor. This constant rain of organic matter is the "biological pump." Once that carbon hits the deep-sea floor, it can remain buried in the sediment for thousands, or even millions, of years.</p>
+
+        <h2>Coastal Sentinels</h2>
+        <p>Mangroves, salt marshes, and seagrass meadows are the high-performance engines of sequestration. Although they occupy less than 0.5% of the sea floor, they are responsible for more than 50% of the carbon buried in marine sediments. A single acre of seagrass can store up to twice as much carbon as an acre of terrestrial forest, primarily by trapping organic matter in their complex root systems where it cannot rot and release CO2 back into the atmosphere.</p>
+
+        
+
+        <h2>Whale Falls: Giant Sequestrators</h2>
+        <p>Even the great whales are part of the equation. A whale accumulates tons of carbon in its massive body over its lifetime. When it dies and sinks to the bottom—a "whale fall"—that carbon is removed from the atmospheric cycle for centuries. In this way, protecting marine life is not just an act of conservation; it is a critical strategy for atmospheric stability.</p>
+
+        <p>The ocean is the final frontier of the Earth's library, a silent giant that breathes with the planet and holds the secrets of our climate's future in its crushing depths.</p>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="index.html" class="back-btn">Return to Library Entry</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+</html>

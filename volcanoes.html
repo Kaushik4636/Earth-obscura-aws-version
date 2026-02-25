@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcanoes | The Earth Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; --accent: #FF3D00; --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        .hero { 
+            height: 70vh; width: 100%; position: relative; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; 
+            background: url('https://images.unsplash.com/photo-1619266465172-02a857c3556d?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat; 
+            background-attachment: fixed; 
+        }
+        .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg)); }
+        
+        .hero-content { z-index: 2; text-align: center; }
+        .hero-content span { font-size: 0.8rem; letter-spacing: 10px; text-transform: uppercase; color: var(--accent); font-weight: 900; }
+        .hero-content h1 { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-top: 10px; }
+        
+        .journal-section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-header { 
+            display: flex; justify-content: space-between; align-items: flex-end; 
+            margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 20px; 
+        }
+        .section-header h2 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 5px; color: rgba(255,255,255,0.5); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+        
+        .entry-card { text-decoration: none; color: #fff; }
+        .image-wrapper { width: 100%; aspect-ratio: 16/10; overflow: hidden; background: #111; margin-bottom: 20px; border: 1px solid var(--border); }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        
+        .entry-card:hover .image-wrapper img { filter: grayscale(0); transform: scale(1.05); }
+        .entry-card span { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 900; }
+        .entry-card h3 { font-size: 1.5rem; margin-top: 5px; font-weight: 400; letter-spacing: -0.5px; }
+        
+        .back-nav { 
+            position: fixed; top: 40px; left: 40px; z-index: 100; text-decoration: none; color: #fff; 
+            font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; 
+            mix-blend-mode: difference; 
+        }
+        .back-nav::before { content: '←'; margin-right: 10px; transition: transform 0.3s; }
+        .back-nav:hover::before { transform: translateX(-5px); }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero { height: 50vh; } }
+    </style>
+</head>
+<body>
+
+    <a href="categories.html" class="back-nav">Back to Library</a>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span>Chapter 07</span>
+            <h1>VOLCANOES</h1>
+        </div>
+    </header>
+
+    <main class="journal-section">
+        <div class="section-header">
+            <h2>Field Journal Entries</h2>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">06 Records Found</p>
+        </div>
+
+<div class="grid">
+    <a href="v1.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJm_dRBYREqLV27xw2lRxGhQXQEM7EIQSi9A&s">
+        </div>
+        <span>Entry 01</span>
+        <h3>Basaltic Shields</h3>
+    </a>
+
+    <a href="v2.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://static.wixstatic.com/media/2063d0_0a211dd700ec4128b44d6124c5cdd053~mv2.png/v1/fill/w_568,h_378,al_c,lg_1,q_85,enc_avif,quality_auto/2063d0_0a211dd700ec4128b44d6124c5cdd053~mv2.png">
+        </div>
+        <span>Entry 02</span>
+        <h3>Explosive Rhyolite</h3>
+    </a>
+
+    <a href="v3.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://study.com/cimages/videopreview/videopreview-full/c4kgits79v.jpg">
+        </div>
+        <span>Entry 03</span>
+        <h3>Subduction Zones</h3>
+    </a>
+
+    <a href="v4.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://imgs.classicfm.com/images/304399?width=1600&crop=16_9&signature=TeJpv4w7HHW1mk8UNByccTETu0o=">
+        </div>
+        <span>Entry 04</span>
+        <h3>Acoustic Shock</h3>
+    </a>
+
+    <a href="v5.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://www.thoughtco.com/thmb/RVHYNhzVuhQIGPETDM42VukXVsg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/an-active-volcano-spews-out-hot-red-lava-and-smoke--140189201-5b8e85b046e0fb00500d0e23.jpg">
+        </div>
+        <span>Entry 05</span>
+        <h3>Sacred Stratovolcano</h3>
+    </a>
+
+    <a href="v6.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://assets3.thrillist.com/v1/image/2792283/381x254/crop;webp=auto;jpeg_quality=60.jpg">
+        </div>
+        <span>Entry 06</span>
+        <h3>Supervolcanic Calderas</h3>
+    </a>
+</div>
+    </main>
+
+</body>
+</html>

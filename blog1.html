@@ -2,95 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Forest Echoes | Nature Insights</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Echoes | Nature by Kaushik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #A100FF; --black: #000000; --white: #FFFFFF; }
-        body { margin: 0; background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.8; }
-        
-        /* Navigation */
-        nav { display: flex; justify-content: space-between; padding: 25px 5%; align-items: center; border-bottom: 1px solid #222; }
-        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: -1px; text-decoration: none; color: white;}
-        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* Full-Screen Modern Header */
-        .post-header {
-            width: 100%;
-            height: 75vh;
-            /* Update image path for each blog (image1.jpg, image2.jpg, etc) */
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), #000000), url('blog_image/image1.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            padding: 0 10% 80px;
-            box-sizing: border-box;
-        }
-
-        .post-header-content { max-width: 900px; }
-        .category-tag { color: var(--accent); font-weight: 700; letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 20px; }
-        .post-header h1 { font-size: 5.5rem; font-weight: 900; margin: 0; text-transform: uppercase; line-height: 0.85; letter-spacing: -3px; }
-
-        /* Article Layout */
-        .article-container { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; padding: 100px 10%; max-width: 1400px; margin: 0 auto; }
-        
-        .article-sidebar { border-top: 1px solid var(--accent); padding-top: 20px; }
-        .article-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #555; }
-        .article-sidebar p { font-size: 0.9rem; color: #888; }
-
-        .article-body { font-size: 1.3rem; color: #ccc; }
-        .article-body p { margin-bottom: 40px; }
-        .article-body h2 { color: white; font-size: 2.5rem; margin: 60px 0 30px; font-weight: 900; }
-        
-        /* High-End Pull Quote */
-        .pull-quote { border-left: 4px solid var(--accent); padding-left: 30px; font-style: italic; color: white; font-size: 1.8rem; margin: 60px 0; }
-
-        .back-nav { padding: 50px 10% 100px; }
-        .back-btn { padding: 15px 40px; border: 1px solid #333; color: white; text-decoration: none; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; }
-        .back-btn:hover { background: var(--accent); border-color: var(--accent); }
+        :root { --accent: #A100FF; --bg: #050505; --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.8; }
+        .article-hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+        .hero-text h1 { font-size: 4rem; font-weight: 900; letter-spacing: -2px; text-align: center; }
+        .container { max-width: 800px; margin: -80px auto 100px; background: #0a0a0a; padding: 60px; border: 1px solid var(--border); position: relative; z-index: 10; }
+        .accent-line { width: 50px; height: 4px; background: var(--accent); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 40px 0 20px; color: var(--accent); font-weight: 900; }
+        p { font-size: 1.1rem; color: #ccc; margin-bottom: 25px; }
+        .quote { font-size: 1.5rem; font-style: italic; border-left: 4px solid var(--accent); padding-left: 30px; margin: 50px 0; color: #fff; }
+        .back-nav { text-align: center; margin-bottom: 80px; }
+        .back-btn { color: #fff; text-decoration: none; border: 1px solid var(--border); padding: 15px 30px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; transition: 0.3s; }
+        .back-btn:hover { background: var(--accent); }
+        footer { text-align: center; padding: 50px; background: #000; border-top: 1px solid var(--border); }
+        footer p { font-size: 0.75rem; letter-spacing: 2px; color: #fff; }
     </style>
 </head>
 <body>
-
-    <nav>
-        <a href="index.html" class="logo">NATURE <span style="color:var(--accent);">></span></a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="blogs.html">Back to Insights</a>
-        </div>
-    </nav>
-
-    <header class="post-header">
-        <div class="post-header-content">
-            <span class="category-tag">01. Forest Conservation</span>
-            <h1>Forest <br>Echoes.</h1>
-        </div>
-    </header>
-
-    <div class="article-container">
-        <aside class="article-sidebar">
-            <h3>Published</h3>
-            <p>February 2026</p>
-            <br>
-            <h3>Reading Time</h3>
-            <p>5 Minutes</p>
-        </aside>
-
-        <article class="article-body">
-            <p>In the heart of ancient woodlands, silence isn't just the absence of noise—it is a language. To the untrained ear, the forest is still, but to those who observe, it is a massive, high-speed network of biological data.</p>
-            
-            <div class="pull-quote">
-                "Connectivity is the key to resilience. In nature, nothing exists in isolation."
-            </div>
-
-            <h2>The Wood Wide Web</h2>
-            <p>Research into mycology has revealed that trees communicate through a complex 'Wood Wide Web'—a fungal network that shares nutrients and warnings across miles of terrain. This natural infrastructure proves that connectivity is the key to resilience. When one tree is under attack by pests, it sends chemical signals through its roots to warn its neighbors to boost their immune defenses.</p>
-            
-            <p>This biological strategy mirrors the most advanced cybersecurity frameworks we build today: decentralized, communicative, and inherently protective of the collective.</p>
-
-            <h2>Sustainable Blueprints</h2>
-            <p>By observing these ancient systems, we find the ultimate blueprint for sustainability. The forest wastes nothing. Every fallen leaf becomes energy for the next generation. As we look toward the future of human engineering, the lessons from the pine barrens offer a path toward true circular economies.</p>
-        </article>
+    <div class="article-hero">
+        <div class="hero-text"><h1>Forest Echoes</h1></div>
     </div>
-
-    <div class="back-nav
+    <div class="container">
+        <div class="accent-line"></div>
+        <p><strong>The Insight:</strong> Beneath the soil of our planet's forests lies a high-speed communication network that predates the internet by millions of years.</p>
+        <h2>The Wood Wide Web</h2>
+        <p>Trees are not isolated individuals. Through a complex symbiotic relationship with mycelium (fungi), they form the "Wood Wide Web." This network allows older "Mother Trees" to send excess sugar to saplings in the shade and even transmit chemical warnings about impending pest attacks.</p>
+        <div class="quote">"Nature doesn't just grow; it communicates. It is the ultimate decentralized network."</div>
+        <h2>A Blueprint for Tech</h2>
+        <p>As a developer, I find this biological infrastructure fascinating. The way forests handle data—prioritizing the health of the collective over the individual—is a masterclass in resilient system design. By studying these ancient woodlands, we can rethink how we build our own digital architectures to be more sustainable and interconnected.</p>
+    </div>
+    <div class="back-nav"><a href="blogs.html" class="back-btn">← Back to Journal</a></div>
+    <footer><p>© 2026 Kaushik Madhavan. Crafted with passion. All rights reserved.</p></footer>
+</body>
+</html>

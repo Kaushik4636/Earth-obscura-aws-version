@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tidal Mechanics | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #4682B4; --bg: #050505; --text: #bbbbbb; --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; line-height: 1.8; }
+        #progress-bar { position: fixed; top: 0; width: 0%; height: 4px; background: var(--accent); z-index: 1000; }
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        .lead { font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4; border-left: 4px solid var(--accent); padding-left: 30px; }
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        .img-box { margin: 60px 0; border: 1px solid var(--border); overflow: hidden; background: #111; }
+        .img-box img { width: 100%; display: block; filter: brightness(0.8); transition: 0.6s; }
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn { display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
+        .back-btn:hover { background: var(--accent); color: #fff; }
+    </style>
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <nav><a href="coastal.html" class="nav-link">← Coastal Hub</a><span class="nav-link">Journal co1</span></nav>
+    <article>
+        <span class="category-tag">Gravitational Dynamics</span>
+        <h1>Tidal <span>Mechanics.</span></h1>
+        <p class="lead">The rhythmic rise and fall of sea levels is a celestial dance between the Earth, Moon, and Sun.</p>
+        
+        <p>Tides are caused by <strong>gravitational gradient forces</strong>. While the Sun is massive, its distance means the Moon exerts roughly twice the tidal force on Earth. This creates two "bulges" in the global ocean—one on the side facing the Moon and one on the opposite side due to centrifugal force.</p>
+
+        
+
+        <p>In coastal geography, the <strong>intertidal zone</strong> is the most volatile habitat on Earth. Organisms here must survive hours of total dehydration and intense UV exposure, followed by hours of total submersion in crashing saltwater.</p>
+        
+        <div class="img-box" data-query="high tide vs low tide coastal cliffs"></div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="coastal.html" class="back-btn">Back to Coastal Hub</a>
+        </div>
+    </article>
+    <script>
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById("progress-bar").style.width = (winScroll / height) * 100 + "%";
+        };
+        document.querySelectorAll('.img-box').forEach(box => {
+            const query = box.getAttribute('data-query');
+            box.innerHTML = `<img src="https://images.unsplash.com/featured/?${query.replace(/\s+/g, ',')}" alt="${query}">`;
+        });
+    </script>
+</body>
+</html>

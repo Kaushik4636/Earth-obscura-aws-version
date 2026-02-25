@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermal Regulation | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #FFB300; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="deserts.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal d2</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Biophysical Adaptation</span>
+        <h1>Thermal <span>Regulation.</span></h1>
+        
+        <p class="lead">In the desert, heat is not just an inconvenience; it is a kinetic force that threatens to denature proteins and boil cellular fluid. Survival requires mastering the laws of thermodynamics.</p>
+
+        <p>The desert operates on a "thermal budget." Organisms must balance heat gain from solar radiation and conduction with heat loss through convection and evaporation. Because water is scarce, evaporative cooling (sweating) is a luxury few can afford. Instead, desert life uses structural engineering to dump heat back into the environment.</p>
+
+        
+
+        <h2>Thermal Windows and Radiators</h2>
+        <p>Many desert animals utilize "thermal windows"—areas of the body with high surface-to-volume ratios and thin skin, packed with blood vessels. The oversized ears of the Fennec Fox or the Jackrabbit act as biological radiators. By pumping hot blood into these extremities, heat is radiated away into the air without the loss of a single drop of water.</p>
+
+        <h2>Thermal Inertia and Burrowing</h2>
+        <p>The desert soil is a powerful insulator. While the surface might be a scorching 70°C, just 30 centimeters below the ground, the temperature can be a stable 25°C. This is due to <strong>thermal inertia</strong>—the soil takes so long to heat up that by the time the midday sun hits the peak, the heat hasn't reached the lower burrows. Most desert life survives by simply "shifting" their day, remaining dormant in these cool sub-strata until the surface cools.</p>
+
+        
+
+        <h2>Reflective Chemistry</h2>
+        <p>Plants and insects often use "Mie scattering" or reflective coatings to stay cool. The Sahara Silver Ant is covered in triangular hairs that reflect visible and near-infrared light with nearly 100% efficiency. This biological "space suit" allows it to forage at temperatures that would kill any other creature, reflecting the sun's energy before it ever touches the skin.</p>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="deserts.html" class="back-btn">Back to Deserts Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+</html>

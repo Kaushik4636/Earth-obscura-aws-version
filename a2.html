@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Greenland Ice Sheet | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #00D1FF; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        /* Image Box Container */
+        .img-box { margin: 60px 0; border: 1px solid var(--border); overflow: hidden; background: #111; }
+        .img-box img { width: 100%; display: block; filter: brightness(0.8); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .img-box:hover img { filter: brightness(1); transform: scale(1.03); }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="arctic.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal a2</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Paleoclimatology</span>
+        <h1>The Frozen <span>Archive.</span></h1>
+        
+        <p class="lead">Greenland is not an island, but a colossal, ancient archive. Encapsulated within its three-kilometer-thick ice sheet is a 100,000-year history of the Earth's atmosphere.</p>
+
+        <p>The Greenland Ice Sheet covers roughly 1.7 million square kilometers. It is so massive that its weight has depressed the bedrock beneath it, creating a basin that sits below sea level. Every layer of snow that falls here is eventually compressed into ice, trapping tiny bubbles of ancient air that provide a direct sample of the past.</p>
+
+        <div class="img-box" data-query="Greenland ice sheet blue river"></div>
+
+        <h2>Moulins and Supraglacial Rivers</h2>
+        <p>In the summer, the surface of the ice sheet undergoes a radical transformation. High-velocity meltwater carves sapphire-blue rivers across the white desert. These rivers eventually terminate in <strong>moulins</strong>—vertical shafts that carry water from the surface down to the base of the ice. This water acts as a lubricant, accelerating the glacier's slide toward the sea.</p>
+
+        
+
+        <h2>Isostatic Rebound</h2>
+        <p>As the ice sheet loses mass due to climate warming, a geological phenomenon known as <strong>isostatic rebound</strong> occurs. The Earth's crust, no longer burdened by the weight of billions of tons of ice, begins to slowly rise. This change in elevation alters the local coastline and can even trigger seismic activity as the tectonic plates adjust to the sudden reduction in pressure.</p>
+
+        <div class="img-box" data-query="Greenland iceberg calving sea"></div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="arctic.html" class="back-btn">Back to Arctic Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        // Progress Bar
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        // Automatic Image Loading
+        document.querySelectorAll('.img-box').forEach(box => {
+            const query = box.getAttribute('data-query');
+            if (query) {
+                const searchTerms = query.replace(/\s+/g, ',');
+                box.innerHTML = `<img src="https://images.unsplash.com/featured/?${searchTerms}" alt="${query}">`;
+            }
+        });
+    </script>
+
+</body>
+</html>

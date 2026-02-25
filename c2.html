@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Stone | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #FF5722; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        .img-box { margin: 60px 0; border: 1px solid var(--border); overflow: hidden; background: #111; }
+        .img-box img { width: 100%; display: block; filter: brightness(0.8); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .img-box:hover img { filter: brightness(1); transform: scale(1.03); }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="canyons.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal c2</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Hydrology & Erosion</span>
+        <h1>The Sculpture of <span>Fluidity.</span></h1>
+        
+        <p class="lead">While most canyons are built by massive rivers over eons, slot canyons like Antelope are carved by the sudden, violent energy of water moving through the desert’s narrowest cracks.</p>
+
+        <p>Located on Navajo land in Arizona, Antelope Canyon is the result of thousands of years of <strong>subaerial erosion</strong>. During monsoon season, rain falling miles away gathers speed and force, funneled into these narrow passageways. The water carries with it abrasive sand, acting like a liquid sandblaster that rounds out the edges of the Navajo Sandstone into undulating waves.</p>
+
+        <div class="img-box" data-query="Antelope Canyon Arizona light beams sandstone waves"></div>
+
+        <h2>Hydraulic Pressure and Slot Formation</h2>
+        <p>The physics of a slot canyon is a study in fluid dynamics. When a flood enters a narrow space, its velocity increases significantly—a phenomenon known as the <strong>Venturi Effect</strong>. This increased speed allows the water to carve deep, swirling "potholes" and smooth, flowing curves that mimic the movement of the water that created them.</p>
+
+        
+
+        <h2>Light as a Geological Element</h2>
+        <p>The canyon's visual depth is amplified by the way light interacts with the iron-oxide in the stone. Light enters through narrow slits at the top, reflecting off the curved walls and shifting in hue from deep purples to burning oranges depending on the time of day. This indirect "glow" is what gives the canyon its ethereal, liquid-like appearance.</p>
+
+        <div class="img-box" data-query="Antelope Canyon orange red sandstone textures"></div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="canyons.html" class="back-btn">Back to Canyons Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        document.querySelectorAll('.img-box').forEach(box => {
+            const query = box.getAttribute('data-query');
+            if (query) {
+                const search = query.replace(/\s+/g, ',');
+                box.innerHTML = `<img src="https://images.unsplash.com/featured/?${search}" alt="${query}">`;
+            }
+        });
+    </script>
+
+</body>
+</html>

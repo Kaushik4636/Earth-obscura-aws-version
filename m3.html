@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glacial Blue | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #A100FF; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1000;
+        }
+        #progress-bar {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+        }
+
+        nav { 
+            padding: 30px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-link { 
+            color: #fff; 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-weight: 700;
+        }
+
+        article { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 100px 5%; 
+        }
+
+        .category-tag { 
+            color: var(--accent); 
+            font-weight: 900; 
+            letter-spacing: 4px; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        h1 { 
+            font-size: clamp(3rem, 8vw, 5rem); 
+            font-weight: 900; 
+            letter-spacing: -3px; 
+            line-height: 1; 
+            margin-bottom: 40px; 
+        }
+
+        .lead { 
+            font-size: 1.5rem; 
+            color: #fff; 
+            font-weight: 300; 
+            margin-bottom: 60px; 
+            line-height: 1.4;
+            border-left: 4px solid var(--accent);
+            padding-left: 30px;
+        }
+
+        p { 
+            font-size: 1.15rem; 
+            color: var(--text); 
+            margin-bottom: 30px; 
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 60px 0 20px;
+            letter-spacing: -1px;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 60px 5%;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: var(--accent);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="mountains.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal m3</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Glaciology & Optics</span>
+        <h1>Glacial <span>Blue.</span></h1>
+        
+        <p class="lead">Glaciers are often called "rivers of ice," but they are actually the Earth's most patient and powerful sculptors, holding secrets in a spectrum of impossible blue.</p>
+
+        <p>A glacier is born from thousands of years of snowfall that never melts. As layer upon layer of snow accumulates, the weight becomes so immense that it compresses the bottom layers into <strong>firn</strong>, and eventually, into solid glacial ice. This process is essentially the removal of air—turning a porous white blanket into a dense, translucent crystal.</p>
+
+        
+
+        <h2>The Physics of Color</h2>
+        <p>Why is glacial ice blue? It is not a reflection of the sky. In deep glacial ice, the compression has forced out every microscopic air bubble. When white light hits this ultra-dense ice, the long-wavelength colors (the reds and yellows) are absorbed. The short-wavelength light—the blue and violet—is reflected back to our eyes. The deeper the ice and the less air it contains, the more intense the sapphire glow becomes.</p>
+
+        <p>This "Glacial Blue" is a visual indicator of age and purity. It represents water that has been locked away from the atmosphere for centuries, shielded from pollutants and preserved in a state of high-density crystalline perfection.</p>
+
+        <h2>The River that Carves Rock</h2>
+        <p>Despite appearing frozen in time, glaciers are in constant, fluid motion. Under the sheer pressure of their own mass, the ice at the base reaches a state of <em>plastic deformation</em>. This allows the glacier to flow around obstacles and down slopes at a rate of centimeters per day.</p>
+
+        <p>As they move, they act like giant sheets of sandpaper. Rocks trapped at the bottom grind against the mountain floor, pulverizing it into "glacial flour." This grinding is what carves out the iconic U-shaped valleys and jagged "horns" like the Matterhorn. They are the only force on earth that can move mountains one grain at a time.</p>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="mountains.html" class="back-btn">Back to Mountain Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+</html>

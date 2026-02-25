@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Emerald Gorge | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #FF5722; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        .img-box { margin: 60px 0; border: 1px solid var(--border); overflow: hidden; background: #111; }
+        .img-box img { width: 100%; display: block; filter: brightness(0.8); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        .img-box:hover img { filter: brightness(1); transform: scale(1.03); }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="canyons.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal c3</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Vegetated Gorges</span>
+        <h1>The Emerald <span>Labyrinth.</span></h1>
+        
+        <p class="lead">Blyde River Canyon is a rarity among the world's great gorges. While most are defined by barren rock, this South African canyon is a thriving, green biome that supports a massive diversity of life.</p>
+
+        <p>Stretching over 26 kilometers through the Mpumalanga province, the canyon is carved mainly from red sandstone. Unlike the arid canyons of the American Southwest, the high rainfall in this region allows the steep cliffs to be carpeted in lush sub-tropical foliage. This creates a striking visual contrast between the iron-rich red rock and the deep green canopy.</p>
+
+        <div class="img-box" data-query="Blyde River Canyon South Africa Three Rondavels green"></div>
+
+        <h2>Bourke's Luck Potholes</h2>
+        <p>At the confluence of the Blyde and Treur rivers, thousands of years of swirling water have carved deep, cylindrical potholes into the riverbed bedrock. This is the result of <strong>fluvial erosion</strong>, where sand and pebbles are caught in eddies, acting as natural drills that bore perfectly circular holes into the hard sandstone over eons.</p>
+
+        
+
+        <h2>The Three Rondavels</h2>
+        <p>The canyon is dominated by the Three Rondavels—three massive quartzite and shale peaks that resemble traditional African homesteads. These structures are a testament to differential erosion, where the harder cap-rock protects the softer stone beneath it, leaving behind towering pillars that overlook the 800-meter drop to the river floor below.</p>
+
+        <div class="img-box" data-query="Blyde River potholes geological water erosion"></div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="canyons.html" class="back-btn">Back to Canyons Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        document.querySelectorAll('.img-box').forEach(box => {
+            const query = box.getAttribute('data-query');
+            if (query) {
+                const search = query.replace(/\s+/g, ',');
+                box.innerHTML = `<img src="https://images.unsplash.com/featured/?${search}" alt="${query}">`;
+            }
+        });
+    </script>
+
+</body>
+</html>

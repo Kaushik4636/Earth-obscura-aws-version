@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Climate | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #A100FF; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        #progress-container {
+            position: fixed; top: 0; width: 100%; height: 4px; background: transparent; z-index: 1000;
+        }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; }
+
+        nav { padding: 30px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .nav-link { color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+
+        article { max-width: 800px; margin: 0 auto; padding: 100px 5%; }
+        .category-tag { color: var(--accent); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 20px; }
+        h1 { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 40px; }
+        
+        .lead { 
+            font-size: 1.5rem; color: #fff; font-weight: 300; margin-bottom: 60px; line-height: 1.4;
+            border-left: 4px solid var(--accent); padding-left: 30px;
+        }
+
+        p { font-size: 1.15rem; color: var(--text); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 60px 0 20px; letter-spacing: -1px; }
+
+        footer { margin-top: 100px; padding: 60px 5%; border-top: 1px solid var(--border); text-align: center; }
+        .back-btn {
+            display: inline-block; padding: 15px 40px; border: 1px solid var(--accent); color: #fff;
+            text-decoration: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="mountains.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal m5</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Meteorology</span>
+        <h1>Vertical <span>Climate.</span></h1>
+        
+        <p class="lead">In the mountains, distance is measured not just in miles, but in altitude. A single afternoon's climb can transport you through four distinct climatic zones.</p>
+
+        <p>This phenomenon is known as <strong>altitudinal zonation</strong>. Because temperatures drop by approximately 6.5°C for every 1,000 meters of ascent (the adiabatic lapse rate), mountains act as compressed maps of the world’s biomes. At the base, you may be in a lush tropical forest; at the peak, you are in a polar wasteland.</p>
+
+        
+
+        <h2>The Adiabatic Lapse Rate</h2>
+        <p>As air rises, it expands due to lower atmospheric pressure. This expansion requires energy, which is taken from the surrounding heat, causing the air temperature to drop. This is why, even in equatorial regions like Africa or South America, you can find permanent snow and glaciers on peaks like Kilimanjaro or the Andes.</p>
+
+        <p>This vertical stacking creates "biological islands." Species that thrive in the cold alpine zone are trapped there by the "seas" of warm air in the valleys below. This isolation often leads to unique evolutionary paths and high rates of endemism, as creatures cannot migrate across the warm lowlands to reach the next mountain peak.</p>
+
+        <h2>Orographic Lift: Making Rain</h2>
+        <p>Mountains also act as massive weather machines. When moisture-laden air hits a mountain range, it is forced upward. As it cools, the moisture condenses and falls as rain or snow on the "windward" side. By the time the air crosses to the other side (the "leeward" side), it is dry, creating what is known as a <strong>rain shadow</strong>—the reason why some of the world's driest deserts sit right next to the world's highest mountains.</p>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="mountains.html" class="back-btn">Back to Mountain Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+</html>

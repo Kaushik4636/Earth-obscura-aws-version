@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dead Zone | Nature +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --accent: #A100FF; 
+            --bg: #050505; 
+            --text: #bbbbbb; 
+            --border: rgba(255, 255, 255, 0.1); 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: var(--bg); 
+            color: #fff; 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.8; 
+        }
+
+        /* Reading Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1000;
+        }
+        #progress-bar {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+        }
+
+        /* Navigation */
+        nav { 
+            padding: 30px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-link { 
+            color: #fff; 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            font-weight: 700;
+        }
+
+        /* Article Layout */
+        article { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 100px 5%; 
+        }
+
+        .category-tag { 
+            color: var(--accent); 
+            font-weight: 900; 
+            letter-spacing: 4px; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        h1 { 
+            font-size: clamp(3rem, 8vw, 5rem); 
+            font-weight: 900; 
+            letter-spacing: -3px; 
+            line-height: 1; 
+            margin-bottom: 40px; 
+        }
+
+        .lead { 
+            font-size: 1.5rem; 
+            color: #fff; 
+            font-weight: 300; 
+            margin-bottom: 60px; 
+            line-height: 1.4;
+            border-left: 4px solid var(--accent);
+            padding-left: 30px;
+        }
+
+        p { 
+            font-size: 1.15rem; 
+            color: var(--text); 
+            margin-bottom: 30px; 
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 500px;
+            background: #111;
+            margin: 60px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 60px 0 20px;
+            letter-spacing: -1px;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 60px 5%;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: var(--accent);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <nav>
+        <a href="mountains.html" class="nav-link">← Chapter Index</a>
+        <span class="nav-link">Journal m1</span>
+    </nav>
+
+    <article>
+        <span class="category-tag">Mountaineering Physiology</span>
+        <h1>The <span>Dead Zone.</span></h1>
+        
+        <p class="lead">At 8,000 meters above sea level, the human body enters a state of slow-motion expiration. This is the "Death Zone"—a place where survival is measured in minutes, not days.</p>
+
+        <p>The transition into the Dead Zone is a biological threshold. At this altitude, the partial pressure of oxygen is so low that the human body can no longer extract enough O₂ to sustain cellular metabolism. While hikers at lower elevations can acclimatize given enough time, the Dead Zone is physically impossible for the human body to adapt to. You are quite literally dying from the moment you arrive.</p>
+
+        
+
+        <h2>The Hypoxic Threshold</h2>
+        <p>As you climb higher, the barometric pressure drops. This doesn't mean there is "less" oxygen in the air (the concentration remains roughly 21%), but the molecules are spaced so far apart that they cannot easily cross the alveolar membrane in your lungs into your bloodstream. Your heart rate skyrockets, often doubling or tripling its resting rate, in a desperate attempt to circulate what little oxygen it can find.</p>
+
+        <p>Cognitive decline is one of the most dangerous side effects. Climbers often describe "high-altitude brain," where simple tasks—like clipping a carabiner or checking a clock—become complex puzzles. Judgment is impaired, and the sense of time begins to warp, leading many to stay on the summit too long, missing their window for a safe descent.</p>
+
+        <h2>Atmospheric Limit</h2>
+        <p>Why does 8,000 meters matter? It is the point where the rate of oxygen consumption exceeds the rate of replenishment. To survive, climbers must use supplemental oxygen or possess world-class genetic lung capacity. Even then, the cold—often reaching -60°C—combined with hurricane-force winds, makes it the most hostile environment on the planet.</p>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <a href="mountains.html" class="back-btn">Back to Mountain Hub</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>© 2026 Kaushik Madhavan. The Earth Library Series.</p>
+    </footer>
+
+    <script>
+        // Progress bar logic
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+
+</body>
+</html>

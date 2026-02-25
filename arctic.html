@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arctic | The Earth Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; --accent: #0077FF; --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        .hero { 
+            height: 70vh; width: 100%; position: relative; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; 
+            background: url('https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; 
+            background-attachment: fixed; 
+        }
+        .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg)); }
+        
+        .hero-content { z-index: 2; text-align: center; }
+        .hero-content span { font-size: 0.8rem; letter-spacing: 10px; text-transform: uppercase; color: var(--accent); font-weight: 900; }
+        .hero-content h1 { font-size: clamp(3rem, 10vw, 8rem); font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-top: 10px; }
+        
+        .journal-section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-header { 
+            display: flex; justify-content: space-between; align-items: flex-end; 
+            margin-bottom: 60px; border-bottom: 1px solid var(--border); padding-bottom: 20px; 
+        }
+        .section-header h2 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 5px; color: rgba(255,255,255,0.5); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+        
+        .entry-card { text-decoration: none; color: #fff; }
+        .image-wrapper { width: 100%; aspect-ratio: 16/10; overflow: hidden; background: #111; margin-bottom: 20px; border: 1px solid var(--border); }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        
+        .entry-card:hover .image-wrapper img { filter: grayscale(0); transform: scale(1.05); }
+        .entry-card span { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 900; }
+        .entry-card h3 { font-size: 1.5rem; margin-top: 5px; font-weight: 400; letter-spacing: -0.5px; }
+        
+        .back-nav { 
+            position: fixed; top: 40px; left: 40px; z-index: 100; text-decoration: none; color: #fff; 
+            font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; 
+            mix-blend-mode: difference; 
+        }
+        .back-nav::before { content: '←'; margin-right: 10px; transition: transform 0.3s; }
+        .back-nav:hover::before { transform: translateX(-5px); }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero { height: 50vh; } }
+    </style>
+</head>
+<body>
+
+    <a href="categories.html" class="back-nav">Back to Library</a>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span>Chapter 05</span>
+            <h1>ARCTIC</h1>
+        </div>
+    </header>
+
+    <main class="journal-section">
+        <div class="section-header">
+            <h2>Field Journal Entries</h2>
+            <p style="font-size: 0.8rem; color: rgba(255,255,255,0.4);">06 Records Found</p>
+        </div>
+
+       <div class="grid">
+    <a href="a1.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://theaveragescientist.co.uk/wp-content/uploads/2023/08/pyrenees-351266_1920.jpg" alt="Albedo Effect - White Snow">
+        </div>
+        <span>Entry 01</span>
+        <h3>The Albedo Effect</h3>
+    </a>
+
+    <a href="a2.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2dldHR5aW1hZ2VzLTUyMzc4NTA2NC5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ==" alt="Glacial Ice Texture">
+        </div>
+        <span>Entry 02</span>
+        <h3>Glacial Anatomy</h3>
+    </a>
+
+    <a href="a3.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://i.natgeofe.com/n/0b3417c0-9e21-4b01-8cdb-9aad3bdacb69/tipping-point-tundra-crater-siberia-forest1.jpg" alt="Frozen Tundra Permafrost">
+        </div>
+        <span>Entry 03</span>
+        <h3>Permafrost Cycles</h3>
+    </a>
+
+    <a href="a4.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://cdn.mos.cms.futurecdn.net/Ncnb7cfh7JcZ7t7TYpttzf-1200-80.jpg" alt="Arctic Midnight Sun">
+        </div>
+        <span>Entry 04</span>
+        <h3>The Midnight Sun</h3>
+    </a>
+
+    <a href="a5.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://cdn.shopify.com/s/files/1/3100/2742/files/icebergs.jpg?v=1569232955&width=800&format=jpg" alt="Floating Iceberg">
+        </div>
+        <span>Entry 05</span>
+        <h3>Iceberg Dynamics</h3>
+    </a>
+
+    <a href="a6.html" class="entry-card">
+        <div class="image-wrapper">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Valle_de_Mifaf%C3%AD_3.jpg/500px-Valle_de_Mifaf%C3%AD_3.jpg" alt="Resilient Tundra Moss">
+        </div>
+        <span>Entry 06</span>
+        <h3>Tundra Resilience</h3>
+    </a>
+</div>
+    </main>
+
+</body>
+</html>

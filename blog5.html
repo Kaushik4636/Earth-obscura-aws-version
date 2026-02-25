@@ -2,97 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Deep Tides | Nature Insights</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Tides | Nature by Kaushik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #A100FF; --black: #000000; --white: #FFFFFF; }
-        body { margin: 0; background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.8; }
-        
-        nav { display: flex; justify-content: space-between; padding: 25px 5%; align-items: center; border-bottom: 1px solid #222; }
-        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: -1px; text-decoration: none; color: white;}
-        .nav-links a { color: var(--white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
-
-        .post-header {
-            width: 100%;
-            height: 75vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), #000000), url('blog_image/image5.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            padding: 0 10% 80px;
-            box-sizing: border-box;
-        }
-
-        .post-header-content { max-width: 900px; }
-        .category-tag { color: var(--accent); font-weight: 700; letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 20px; }
-        .post-header h1 { font-size: 5.5rem; font-weight: 900; margin: 0; text-transform: uppercase; line-height: 0.85; letter-spacing: -3px; }
-
-        .article-container { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; padding: 100px 10%; max-width: 1400px; margin: 0 auto; }
-        
-        .article-sidebar { border-top: 1px solid var(--accent); padding-top: 20px; }
-        .article-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #555; }
-        .article-sidebar p { font-size: 0.9rem; color: #888; }
-
-        .article-body { font-size: 1.3rem; color: #ccc; }
-        .article-body p { margin-bottom: 40px; }
-        .article-body h2 { color: white; font-size: 2.5rem; margin: 60px 0 30px; font-weight: 900; }
-        
-        .pull-quote { border-left: 4px solid var(--accent); padding-left: 30px; font-style: italic; color: white; font-size: 1.8rem; margin: 60px 0; }
-
-        .back-nav { padding: 50px 10% 100px; }
-        .back-btn { padding: 15px 40px; border: 1px solid #333; color: white; text-decoration: none; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; transition: 0.3s; }
-        .back-btn:hover { background: var(--accent); border-color: var(--accent); }
+        :root { --accent: #A100FF; --bg: #050505; --border: rgba(255, 255, 255, 0.1); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; line-height: 1.8; }
+        .article-hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+        .hero-text h1 { font-size: 4rem; font-weight: 900; letter-spacing: -2px; text-align: center; }
+        .container { max-width: 800px; margin: -80px auto 100px; background: #0a0a0a; padding: 60px; border: 1px solid var(--border); position: relative; z-index: 10; }
+        .accent-line { width: 50px; height: 4px; background: var(--accent); margin-bottom: 30px; }
+        h2 { font-size: 2rem; margin: 40px 0 20px; color: var(--accent); font-weight: 900; }
+        p { font-size: 1.1rem; color: #ccc; margin-bottom: 25px; }
+        .quote { font-size: 1.5rem; font-style: italic; border-left: 4px solid var(--accent); padding-left: 30px; margin: 50px 0; color: #fff; }
+        .back-nav { text-align: center; margin-bottom: 80px; }
+        .back-btn { color: #fff; text-decoration: none; border: 1px solid var(--border); padding: 15px 30px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; transition: 0.3s; }
+        .back-btn:hover { background: var(--accent); }
+        footer { text-align: center; padding: 50px; background: #000; border-top: 1px solid var(--border); }
+        footer p { font-size: 0.75rem; letter-spacing: 2px; color: #fff; }
     </style>
 </head>
 <body>
-
-    <nav>
-        <a href="index.html" class="logo">NATURE <span style="color:var(--accent);">></span></a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="blogs.html">Back to Insights</a>
-        </div>
-    </nav>
-
-    <header class="post-header">
-        <div class="post-header-content">
-            <span class="category-tag">05. Marine Strategy</span>
-            <h1>Deep <br>Tides.</h1>
-        </div>
-    </header>
-
-    <div class="article-container">
-        <aside class="article-sidebar">
-            <h3>Focus</h3>
-            <p>Ocean Thermostat</p>
-            <br>
-            <h3>Scale</h3>
-            <p>Global Impact</p>
-        </aside>
-
-        <article class="article-body">
-            <p>The ocean is the planet's most efficient energy distribution network. Through massive current systems, it regulates temperature, moving heat from the equator to the poles and ensuring the global climate remains within habitable limits.</p>
-            
-            <div class="pull-quote">
-                "To understand the future of our planet, we must first understand the strategy of the deep."
-            </div>
-
-            <h2>The Conveyor Belt</h2>
-            <p>The <strong>Global Conveyor Belt</strong> is a constantly moving system of deep-ocean circulation driven by temperature and salinity. This thermo-haline circulation is vital for the health of marine life, as it cycles oxygen and nutrients throughout the deep sea.</p>
-            
-            
-            
-            <p>In our modern world, these patterns are shifting. As ice caps melt and fresh water enters the system, the density of the water changes, potentially slowing the belt. This highlights the urgent need for real-time marine monitoring and a deeper understanding of oceanic data analytics.</p>
-
-            <h2>Resilience in Depth</h2>
-            <p>Despite the immense pressure and total darkness of the deep ocean, life finds a way to thrive. The resilience found in deep-sea ecosystems—utilizing hydrothermal vents for energy rather than sunlight—provides a masterclass in <strong>innovation under constraint</strong>. It reminds us that even in the most challenging conditions, efficient systems can be built to last.</p>
-        </article>
+    <div class="article-hero">
+        <div class="hero-text"><h1>Deep Tides</h1></div>
     </div>
-
-    <div class="back-nav">
-        <a href="blogs.html" class="back-btn">← Back to All Stories</a>
+    <div class="container">
+        <div class="accent-line"></div>
+        <p><strong>The Insight:</strong> The ocean is a massive conveyor belt of data, regulating the temperature of our entire planet.</p>
+        <h2>The Global Conveyor</h2>
+        <p>Deep-ocean currents are driven by changes in temperature and salt. This constant circulation moves heat from the equator to the poles, making life on land possible. Without this "liquid data flow," our weather systems would collapse. It is the world’s most critical logistics network.</p>
+        <div class="quote">"To understand the future of our planet, we must first understand the strategy of the deep."</div>
+        <h2>Data in Motion</h2>
+        <p>In the world of cloud computing, we talk about "data in motion." The ocean is the ultimate physical example of this. By tracking these currents, scientists can predict climate shifts years in advance. It reminds us that every system is interconnected—and that we must protect the source of the flow.</p>
     </div>
-
+    <div class="back-nav"><a href="blogs.html" class="back-btn">← Back to Journal</a></div>
+    <footer><p>© 2026 Kaushik Madhavan. Crafted with passion. All rights reserved.</p></footer>
 </body>
 </html>
